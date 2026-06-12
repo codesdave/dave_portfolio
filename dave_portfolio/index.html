@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asp Dave — Digital Marketing Specialist</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Dave<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn-primary" style="justify-content:center;">Let's Talk</a>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-tag reveal">Digital Marketing Specialist</p>
+      <h1 class="hero-h1 reveal reveal-delay-1">
+        Growth-Driven<br>Marketing <em>That<br>Converts.</em>
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        Helping brands in Nigeria and beyond grow their audience, build trust, and turn clicks into loyal customers.
+      </p>
+      <div class="hero-btns reveal reveal-delay-3">
+        <a href="#services" class="btn-primary">
+          View My Services
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">
+          Get in Touch
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal reveal-delay-2">
+      <div class="hero-photo-wrap">
+        <!--
+          TO ADD YOUR PHOTO: replace this div with:
+          <img src="your-photo.jpg" alt="Asp Dave" style="width:100%;height:100%;object-fit:cover;" />
+        -->
+        <div class="hero-photo-placeholder">
+          <div class="hero-avatar">AD</div>
+          <div class="hero-photo-name">Asp Dave</div>
+          <div class="hero-photo-role">Digital Marketer & Growth Strategist</div>
+          <div class="hero-photo-hint">Replace with your photo</div>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <div>
+          <div class="hero-badge-dot"></div>
+          <div class="hero-badge-num">5+</div>
+          <div class="hero-badge-label">Years of<br>Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item reveal">
+      <div class="stat-num"><span class="count-up" data-target="40">0</span>+</div>
+      <div class="stat-label">Brands Grown</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+      <div class="stat-num"><span class="count-up" data-target="300">0</span>%</div>
+      <div class="stat-label">Average ROI Delivered</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-num"><span class="count-up" data-target="12">0</span>+</div>
+      <div class="stat-label">Industries Served</div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="services-header">
+      <div>
+        <p class="section-tag reveal">What I Do</p>
+        <h2 class="section-title reveal reveal-delay-1">Services Built<br>for Real Results</h2>
+      </div>
+      <p class="services-header-sub reveal reveal-delay-1">
+        Every campaign is tailored, data-informed, and optimised for your specific goals.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-number">01</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="service-name">Social Media Strategy</div>
+        <div class="service-desc">Content planning, audience growth and community management across Instagram, X, TikTok, LinkedIn and more.</div>
+        <a href="#contact" class="service-link">Learn more <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-number">02</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="service-name">Paid Advertising</div>
+        <div class="service-desc">Meta, Google & TikTok ads engineered for maximum conversions and the best return on every naira spent.</div>
+        <a href="#contact" class="service-link">Learn more <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-number">03</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="service-name">SEO & Content</div>
+        <div class="service-desc">Search visibility, keyword strategy and content that attracts quality organic traffic and builds authority.</div>
+        <a href="#contact" class="service-link">Learn more <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="about-visual reveal">
+      <div class="about-img">
+        <!--
+          TO ADD YOUR PHOTO: replace this div with:
+          <img src="your-photo.jpg" alt="Asp Dave" style="width:100%;height:100%;object-fit:cover;" />
+        -->
+        <div class="about-img-inner">
+          <div class="about-avatar">AD</div>
+          <p style="font-size:12px; color: var(--ink-muted);">Your photo here</p>
+        </div>
+        <div class="about-overlay">
+          <div class="about-overlay-label">Client Satisfaction</div>
+          <div class="about-overlay-val">98%</div>
+        </div>
+      </div>
+      <div class="about-accent">
+        <div class="about-accent-num">5+</div>
+        <div class="about-accent-label">Yrs Experience</div>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <p class="section-tag reveal">About Me</p>
+      <h2 class="section-title reveal reveal-delay-1">Strategy. Data.<br>Results.</h2>
+      <p class="about-body reveal reveal-delay-2">
+        I'm a digital marketing professional with a passion for helping businesses cut through the noise. I combine data-driven thinking with sharp creative strategy to build campaigns that actually move the needle — not just vanity metrics.
+        <br><br>
+        Based in Lagos, I've worked across industries from fintech and e-commerce to hospitality and education, helping brands connect with the right people at the right moment.
+      </p>
+      <div class="about-skills reveal reveal-delay-3">
+        <span class="skill-tag">Brand Strategy</span>
+        <span class="skill-tag">Growth Hacking</span>
+        <span class="skill-tag">Email Marketing</span>
+        <span class="skill-tag">Analytics</span>
+        <span class="skill-tag">Copywriting</span>
+        <span class="skill-tag">Content Creation</span>
+        <span class="skill-tag">Lead Generation</span>
+      </div>
+      <a href="#contact" class="btn-primary reveal reveal-delay-4" style="width:fit-content;">
+        Work With Me
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-inner">
+      <p class="contact-section-tag reveal">Get In Touch</p>
+      <h2 class="contact-title reveal reveal-delay-1">Ready to Grow<br>Your Brand?</h2>
+      <p class="contact-sub reveal reveal-delay-2">Let's talk about your goals. No fluff — just results.</p>
+
+      <form class="contact-form reveal reveal-delay-3" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="service">Service Interested In</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Select a service...</option>
+            <option value="social">Social Media Strategy</option>
+            <option value="ads">Paid Advertising</option>
+            <option value="seo">SEO & Content</option>
+            <option value="other">Other / Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your project, goals, or any questions..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          Send Message
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <div class="form-success-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="var(--gold)" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3>Message Sent!</h3>
+        <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <a href="#hero" class="footer-logo">Dave<span>.</span></a>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Asp Dave. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript — at bottom so HTML loads first -->
+  <script src="script.js"></script>
+
+</body>
+</html>
