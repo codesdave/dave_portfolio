@@ -2,6 +2,8 @@
    script.js — Asp Dave Digital Marketing Site
    ============================================ */
 
+import { submitContactForm } from './firebase.js';
+
 /* ── Custom Cursor ── */
 const cursor     = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursor-ring');
@@ -57,7 +59,6 @@ function closeMobileMenu() {
   mobileMenu.classList.remove('open');
 }
 
-// Close menu when any mobile nav link is clicked
 document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', closeMobileMenu);
 });
@@ -85,7 +86,6 @@ const counterObserver = new IntersectionObserver((entries) => {
       const duration = 1600;
       const step     = target / (duration / 16);
       let current    = 0;
-
       const timer = setInterval(() => {
         current += step;
         if (current >= target) {
@@ -95,7 +95,6 @@ const counterObserver = new IntersectionObserver((entries) => {
           el.textContent = Math.floor(current);
         }
       }, 16);
-
       counterObserver.unobserve(el);
     }
   });
@@ -104,24 +103,38 @@ const counterObserver = new IntersectionObserver((entries) => {
 counters.forEach(el => counterObserver.observe(el));
 
 /* ── Contact Form ── */
-const form       = document.getElementById('contact-form');
-const successMsg = document.getElementById('form-success');
+document.addEventListener('DOMContentLoaded', () => {
+  const form       = document.getElementById('contact-form');
+  const successMsg = document.getElementById('form-success');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+  if (!form) {
+    console.error('Contact form not found in DOM');
+    return;
+  }
 
-  const nameVal    = document.getElementById('name').value.trim();
-  const emailVal   = document.getElementById('email').value.trim();
-  const messageVal = document.getElementById('message').value.trim();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.log('Form submitted');
 
-  const nameField    = document.getElementById('name');
-  const emailField   = document.getElementById('email');
-  const messageField = document.getElementById('message');
+    const nameField    = document.getElementById('name');
+    const emailField   = document.getElementById('email');
+    const serviceField = document.getElementById('service');
+    const messageField = document.getElementById('message');
 
-  // Validation — highlight empty required fields in red
-  let hasError = false;
-  [{ val: nameVal, field: nameField }, { val: emailVal, field: emailField }, { val: messageVal, field: messageField }]
-    .forEach(({ val, field }) => {
+    const nameVal    = nameField.value.trim();
+    const emailVal   = emailField.value.trim();
+    const serviceVal = serviceField.value;
+    const messageVal = messageField.value.trim();
+
+    console.log('Form data:', { nameVal, emailVal, serviceVal, messageVal });
+
+    /* -- Validation -- */
+    let hasError = false;
+    [
+      { val: nameVal,    field: nameField },
+      { val: emailVal,   field: emailField },
+      { val: messageVal, field: messageField }
+    ].forEach(({ val, field }) => {
       if (!val) {
         field.style.borderColor = '#c94040';
         setTimeout(() => field.style.borderColor = '', 2000);
@@ -129,15 +142,44 @@ form.addEventListener('submit', (e) => {
       }
     });
 
-  if (hasError) return;
+    if (hasError) {
+      console.log('Validation failed — empty fields');
+      return;
+    }
 
-  // Simulate submission — replace setTimeout with your real endpoint (Formspree / EmailJS / backend)
-  const btn = form.querySelector('.btn-submit');
-  btn.textContent  = 'Sending...';
-  btn.style.opacity = '0.7';
+    /* -- Loading state -- */
+    const btn         = form.querySelector('.btn-submit');
+    btn.textContent   = 'Sending...';
+    btn.style.opacity = '0.7';
+    btn.disabled      = true;
 
-  setTimeout(() => {
-    form.style.display       = 'none';
-    successMsg.style.display = 'block';
-  }, 1200);
+    /* -- Firebase submit -- */
+    console.log('Calling Firebase...');
+    const result = await submitContactForm({
+      name:    nameVal,
+      email:   emailVal,
+      service: serviceVal || 'Not specified',
+      message: messageVal
+    });
+
+    console.log('Firebase result:', result);
+
+    if (result.success) {
+      form.style.display       = 'none';
+      successMsg.style.display = 'block';
+    } else {
+      btn.textContent   = 'Send Message';
+      btn.style.opacity = '1';
+      btn.disabled      = false;
+
+      let errorNote = document.getElementById('form-error');
+      if (!errorNote) {
+        errorNote = document.createElement('p');
+        errorNote.id = 'form-error';
+        errorNote.style.cssText = 'color:#c94040; font-size:13px; text-align:center; margin-top:8px;';
+        form.appendChild(errorNote);
+      }
+      errorNote.textContent = 'Something went wrong. Please try again.';
+    }
+  });
 });
